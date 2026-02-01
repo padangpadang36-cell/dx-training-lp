@@ -323,5 +323,55 @@
             }
         });
     </script>
+    <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+    import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+    // 今中さんのFirebase Config
+    const firebaseConfig = {
+        apiKey: "AIzaSyCMyXg6YgtoQkeKjxv-bG7q6xTzRdKgCeY",
+        authDomain: "kk-connect-official.firebaseapp.com",
+        projectId: "kk-connect-official",
+        storageBucket: "kk-connect-official.firebasestorage.app",
+        messagingSenderId: "1071282245424",
+        appId: "1:1071282245424:web:8164a41c65b3cd27c882f5"
+    };
+
+    // 初期化
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    // フォームの動作設定
+    const form = document.getElementById('consultation-form');
+    const btn = document.getElementById('submit-btn');
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault(); // ページのリロードを防ぐ
+        
+        const company = document.getElementById('company-name').value;
+        const email = document.getElementById('user-email').value;
+
+        try {
+            btn.disabled = true;
+            btn.innerText = "送信中...";
+
+            // Firestoreの "inquiries" コレクションにデータを保存
+            await addDoc(collection(db, "inquiries"), {
+                company: company,
+                email: email,
+                timestamp: serverTimestamp() // 送信日時を記録
+            });
+
+            alert("お申し込みありがとうございました！データがデータベースに保存されました。");
+            form.reset();
+        } catch (error) {
+            console.error("Error: ", error);
+            alert("送信に失敗しました。Firestoreの「ルール」がテストモードになっているか確認してください。");
+        } finally {
+            btn.disabled = false;
+            btn.innerText = "無料相談・デモ体験を申し込む";
+        }
+    });
+</script>
 </body>
 </html>
