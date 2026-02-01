@@ -257,6 +257,54 @@
         <p>© 2026 KK CONNECT G.K. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
+
+        // 今中さんのConfig（画像3枚目の内容を適用済み）
+        const firebaseConfig = {
+            apiKey: "AIzaSyCMyXg6YgtoQkeKjxv-bG7q6xTzRdKgCeY",
+            authDomain: "kk-connect-official.firebaseapp.com",
+            projectId: "kk-connect-official",
+            storageBucket: "kk-connect-official.firebasestorage.app",
+            messagingSenderId: "1071282245424",
+            appId: "1:1071282245424:web:8164a41c65b3cd27c882f5"
+        };
+
+        // 初期化
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // フォーム送信のロジック
+        document.querySelector('form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const btn = e.target.querySelector('button');
+            const company = e.target.querySelector('input[placeholder="貴社名"]').value;
+            const email = e.target.querySelector('input[placeholder="メールアドレス"]').value;
+
+            if(!company || !email) return alert("すべての項目を入力してください");
+
+            try {
+                btn.disabled = true;
+                btn.innerText = "送信中...";
+
+                // Firestoreへ保存
+                await addDoc(collection(db, "inquiries"), {
+                    company: company,
+                    email: email,
+                    timestamp: serverTimestamp()
+                });
+
+                alert("お申し込みありがとうございます！内容がデータベースに保存されました。");
+                e.target.reset();
+            } catch (error) {
+                console.error("Error: ", error);
+                alert("送信に失敗しました。設定を確認してください。");
+            } finally {
+                btn.disabled = false;
+                btn.innerText = "無料相談・デモ体験を申し込む";
+            }
+        });
+    </script>
 </body>
 </html>
