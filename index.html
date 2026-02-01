@@ -329,6 +329,7 @@
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
     import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore.js";
 
+    // Firebaseの構成（今中さんのプロジェクト設定）
     const firebaseConfig = {
         apiKey: "AIzaSyCMyXg6YgtoQkeKjxv-bG7q6xTzRdKgCeY",
         authDomain: "kk-connect-official.firebaseapp.com",
@@ -344,34 +345,56 @@
     const form = document.getElementById('consultation-form');
     const btn = document.getElementById('submit-btn');
 
-    if (form) {
-        form.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            const company = document.getElementById('company-name').value;
-            const email = document.getElementById('user-email').value;
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const company = document.getElementById('company-name').value;
+        const email = document.getElementById('user-email').value;
 
-            try {
-                btn.disabled = true;
-                btn.innerText = "送信中...";
+        try {
+            btn.disabled = true;
+            btn.innerText = "送信中...";
 
-                // Firestoreへ保存
-                await addDoc(collection(db, "inquiries"), {
-                    company: company,
-                    email: email,
-                    timestamp: serverTimestamp()
-                });
+            // 1. 顧客情報の保存（inquiries）
+            await addDoc(collection(db, "inquiries"), {
+                company: company,
+                email: email,
+                timestamp: serverTimestamp()
+            });
 
-                alert("お申し込みを保存しました！Firebaseを確認してください。");
-                form.reset();
-            } catch (error) {
-                console.error("Error: ", error);
-                alert("送信失敗。Firestoreの「ルール」がテストモードか確認してください。");
-            } finally {
-                btn.disabled = false;
-                btn.innerText = "無料相談・デモ体験を申し込む";
-            }
-        });
-    }
+            // 2. 自動返信メールの予約（mail）
+            // ここに書き込むと、拡張機能が検知して自動でメールを送ります
+            await addDoc(collection(db, "mail"), {
+                to: email,
+                message: {
+                    subject: "【KK CONNECT】無料相談・デモ体験のお申し込みを承りました",
+                    html: `
+                        ${company} 様<br><br>
+                        お世話になっております。KK CONNECTの今中樹一です。<br>
+                        この度は、DX推進・AI導入内製化プログラム相談・体験へのお申し込みありがとうございます。<br><br>
+                        早速ですが、オンライン面談にて詳細をお伺いしたく存じます。<br>
+                        以下のリンクより、ご都合の良い日時をご選択いただけますでしょうか。<br><br>
+                        ▼日程調整URL（TimeRex）<br>
+                        <a href="https://timerex.net/s/kkconnect/625b2b44">https://timerex.net/s/kkconnect/625b2b44</a><br><br>
+                        面談当日、お話しできることを楽しみにしております。<br><br>
+                        --------------------------------------------------<br>
+                        合同会社KK CONNECT 代表 今中 樹一<br>
+                        URL: https://kk-connect2022.com<br>
+                        --------------------------------------------------
+                    `
+                }
+            });
+
+            alert("お申し込みありがとうございます！日程調整用のメールをお送りしました。");
+            form.reset();
+
+        } catch (error) {
+            console.error("Error adding document: ", error);
+            alert("送信に失敗しました。Blazeプランへの移行と拡張機能の設定を確認してください。");
+        } finally {
+            btn.disabled = false;
+            btn.innerText = "無料相談・デモ体験を申し込む";
+        }
+    });
 </script>
 
     
