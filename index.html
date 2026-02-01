@@ -3,109 +3,147 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DX推進・AI導入加速プログラム | KK CONNECT</title>
+    <title>DX推進・AI導入加速「内製化」プログラム | KK CONNECT</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
-<body class="bg-slate-50 text-slate-800 font-['Noto_Sans_JP']">
+<body class="bg-slate-50 text-slate-800 font-['Noto_Sans_JP'] leading-relaxed">
 
-    <div id="mobile-menu" class="fixed inset-0 bg-blue-900 z-[100] flex flex-col items-center justify-center space-y-8 text-2xl text-white opacity-0 pointer-events-none transition-all duration-300">
-        <button id="close-menu" class="absolute top-6 right-6 text-4xl">&times;</button>
-        <a href="#problem" class="menu-link">課題</a>
-        <a href="#solution" class="menu-link">解決策</a>
-        <a href="#curriculum" class="menu-link">カリキュラム</a>
-        <a href="#instructor" class="menu-link">講師紹介</a>
-        <a href="#contact" class="bg-orange-500 px-8 py-3 rounded-full font-bold">無料相談</a>
-    </div>
-
-    <header class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50">
-        <div class="container mx-auto px-4 md:px-6 py-4 flex justify-between items-center">
-            <div class="text-xl md:text-2xl font-black text-blue-900 tracking-tighter">KK CONNECT</div>
-            <nav class="hidden md:flex space-x-8 font-bold">
-                <a href="#problem" class="hover:text-blue-600 transition">課題</a>
-                <a href="#solution" class="hover:text-blue-600 transition">解決策</a>
-                <a href="#curriculum" class="hover:text-blue-600 transition">カリキュラム</a>
-                <a href="#instructor" class="hover:text-blue-600 transition">講師紹介</a>
-            </nav>
-            <div class="flex items-center space-x-4">
-                <a href="#contact" class="hidden sm:block bg-blue-600 text-white px-5 py-2 rounded-full font-bold hover:bg-blue-700 transition">無料相談</a>
-                <button id="open-menu" class="md:hidden text-3xl text-blue-900">☰</button>
-            </div>
+    <header class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-black text-blue-900 tracking-tighter">KK CONNECT</div>
+            <a href="#contact" class="bg-blue-600 text-white px-6 py-2 rounded-full font-bold hover:bg-blue-700 transition">無料相談</a>
         </div>
     </header>
 
-    <section class="relative h-[80vh] flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 bg-blue-900 z-0">
-            <div class="absolute inset-0 bg-gradient-to-r from-blue-900/90 to-indigo-900/80"></div>
-            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover mix-blend-overlay opacity-40" alt="background">
+    <section class="relative bg-blue-900 text-white py-24 md:py-32 overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover" alt="tech-bg">
         </div>
-        
-        <div class="container mx-auto px-6 relative z-10 text-center text-white">
-            <h1 class="fade-in text-3xl md:text-6xl font-black mb-6 leading-tight drop-shadow-lg">
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <h1 class="text-4xl md:text-6xl font-black mb-8 leading-tight">
                 「外注頼みのDX」はもう終わり。<br>
-                <span class="text-blue-300">AI業務アプリを"自作"する時代です。</span>
+                <span class="text-blue-400">御社の社員が、AIアプリを"自作"する時代です。</span>
             </h1>
-            <p class="fade-in delay-1 text-lg md:text-2xl mb-10 text-blue-50 max-w-3xl mx-auto font-medium">
-                難しいプログラミングは不要。現場を知り尽くした社員が、<br class="hidden md:block">
-                わずか数日で「動くシステム」を作り出す。
+            <p class="text-xl md:text-2xl mb-12 text-blue-100 max-w-4xl mx-auto font-medium">
+                難しいプログラミングは不要。Googleの最新AIツールを使えば、<br class="hidden md:block">
+                現場の課題を知り尽くした社員が、たった数日で「動くシステム」を作り出せます。
             </p>
-            <div class="fade-in delay-2">
-                <a href="#contact" class="inline-block bg-orange-500 text-white text-xl md:text-2xl px-10 py-4 rounded-xl font-black hover:bg-orange-600 shadow-2xl transform hover:scale-105 transition">
-                    無料相談・デモ申し込み
-                </a>
+            <a href="#contact" class="inline-block bg-orange-500 text-white text-2xl px-12 py-5 rounded-xl font-black hover:bg-orange-600 shadow-2xl transform hover:-translate-y-1 transition">
+                無料相談・デモ申し込みはこちら
+            </a>
+        </div>
+    </section>
+
+    <section id="problem" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-black text-center mb-16">こんな「DX疲れ」を感じていませんか？</h2>
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="flex gap-4 p-6 bg-slate-50 rounded-2xl border-l-8 border-blue-500">
+                    <span class="text-3xl">⚠️</span>
+                    <p class="text-lg font-bold">「AI導入、DX推進...」言葉ばかり先行して、現場は何も変わっていない</p>
+                </div>
+                <div class="flex gap-4 p-6 bg-slate-50 rounded-2xl border-l-8 border-blue-500">
+                    <span class="text-3xl">⚠️</span>
+                    <p class="text-lg font-bold">ベンダーの見積もりを取ったら、数百万円・数ヶ月かかると言われた</p>
+                </div>
+                <div class="flex gap-4 p-6 bg-slate-50 rounded-2xl border-l-8 border-blue-500">
+                    <span class="text-3xl">⚠️</span>
+                    <p class="text-lg font-bold">導入したパッケージソフトが現場に合わず、結局使われていない</p>
+                </div>
+                <div class="flex gap-4 p-6 bg-slate-50 rounded-2xl border-l-8 border-blue-500">
+                    <span class="text-3xl">⚠️</span>
+                    <p class="text-lg font-bold">情シス担当がいないため、新しい技術の導入が進まな</p>
+                </div>
+            </div>
+            <p class="text-center mt-16 text-2xl font-black text-red-600">これらは全て、「外部任せ」だから起こる問題です。</p>
+        </div>
+    </section>
+
+    <section class="py-24 bg-blue-50">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-black mb-8 leading-tight">答えは、現場社員による<br>「AI開発の内製化」にあります。</h2>
+                <p class="text-lg md:text-xl mb-16 text-slate-700 font-medium">
+                    Google AI StudioやFirebaseといった最新ツールを使えば、専門知識がない社員でも、AIと対話するように指示を出すだけで、本格的なアプリケーションを構築できます。
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="bg-white p-10 rounded-3xl shadow-xl hover-scale">
+                    <div class="text-blue-600 text-5xl mb-6">⚡</div>
+                    <h3 class="text-2xl font-black mb-4">圧倒的なスピード</h3>
+                    <p class="text-slate-600">外部との調整が不要。「欲しい」と思ったその日にプロトタイプが動き出します。</p>
+                </div>
+                <div class="bg-white p-10 rounded-3xl shadow-xl hover-scale">
+                    <div class="text-blue-600 text-5xl mb-6">💰</div>
+                    <h3 class="text-2xl font-black mb-4">コスト削減</h3>
+                    <p class="text-slate-600">高額な開発外注費や、使わない機能満載のパッケージ利用料が不要になります。</p>
+                </div>
+                <div class="bg-white p-10 rounded-3xl shadow-xl hover-scale">
+                    <div class="text-blue-600 text-5xl mb-6">🎯</div>
+                    <h3 class="text-2xl font-black mb-4">現場フィット</h3>
+                    <p class="text-slate-600">業務を一番知っている本人が作るから、本当に役立つツールが生まれます。</p>
+                </div>
             </div>
         </div>
     </section>
 
     <section id="curriculum" class="py-24 bg-white">
         <div class="container mx-auto px-6">
-            <div class="text-center mb-20">
-                <h2 class="text-3xl md:text-4xl font-black mb-4">挫折させない3ステップ成長ロードマップ</h2>
-                <div class="h-1.5 w-24 bg-blue-600 mx-auto"></div>
-            </div>
+            <h2 class="text-3xl md:text-4xl font-black text-center mb-16">挫折させない「3ステップ成長ロードマップ」</h2>
             
-            <div class="grid md:grid-cols-3 gap-12">
-                <div class="scroll-reveal bg-slate-50 p-8 rounded-3xl border border-slate-200 relative">
-                    <div class="absolute -top-6 left-8 bg-blue-600 text-white px-4 py-1 rounded-full font-bold text-sm">LEVEL 01</div>
-                    <h3 class="text-2xl font-black mb-4 pt-4">即効！課題アプリ化</h3>
-                    <p class="text-slate-600 mb-6">AIと対話し、目の前の「めんどくさい」をその場でツールに変える感動からスタート。</p>
-                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&q=80&w=400" class="rounded-xl w-full h-40 object-cover grayscale hover:grayscale-0 transition duration-500" alt="step1">
-                </div>
-                <div class="scroll-reveal bg-slate-50 p-8 rounded-3xl border border-slate-200 relative">
-                    <div class="absolute -top-6 left-8 bg-indigo-600 text-white px-4 py-1 rounded-full font-bold text-sm">LEVEL 02</div>
-                    <h3 class="text-2xl font-black mb-4 pt-4">共有！フロントアプリ</h3>
-                    <p class="text-slate-600 mb-6">作ったツールをURL化してチームで共有。スマホ一つで現場が変わる実感を全員で共有。</p>
-                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=400" class="rounded-xl w-full h-40 object-cover grayscale hover:grayscale-0 transition duration-500" alt="step2">
-                </div>
-                <div class="scroll-reveal bg-slate-50 p-8 rounded-3xl border border-slate-200 relative">
-                    <div class="absolute -top-6 left-8 bg-purple-600 text-white px-4 py-1 rounded-full font-bold text-sm">LEVEL 03</div>
-                    <h3 class="text-2xl font-black mb-4 pt-4">完結！フルスタック</h3>
-                    <p class="text-slate-600 mb-6">認証・DB完備。顧客管理や在庫管理など、会社の「資産」となる本格システムを内製化。</p>
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=400" class="rounded-xl w-full h-40 object-cover grayscale hover:grayscale-0 transition duration-500" alt="step3">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="instructor" class="py-24 bg-slate-900 text-white overflow-hidden">
-        <div class="container mx-auto px-6">
-            <div class="flex flex-col md:flex-row items-center gap-16">
-                <div class="w-full md:w-1/2 scroll-reveal">
-                    <h2 class="text-sm font-bold text-blue-400 mb-4 tracking-widest uppercase">Instructor</h2>
-                    <h3 class="text-4xl md:text-5xl font-black mb-6">今中 樹一<br><span class="text-2xl text-slate-400 font-bold">Kiichi Imanaka</span></h3>
-                    <p class="text-lg text-slate-300 mb-8 leading-relaxed">
-                        元アサヒビールにて16年間、プロジェクトマネージャーとして基幹システムの構築を指揮。大規模開発の「堅牢性」とAIの「スピード」を融合させた唯一無二の指導。
-                    </p>
-                    <div class="bg-blue-800/30 p-6 rounded-2xl border border-blue-500/30 italic">
-                        「明日から現場が動くものを作る。それが、私が16年の大規模開発で辿り着いた答えです。」
+            <div class="space-y-12 max-w-5xl mx-auto">
+                <div class="scroll-reveal bg-white border-2 border-slate-100 p-8 md:p-12 rounded-[3rem] shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 left-0 bg-blue-600 text-white px-8 py-2 font-black">Level 01</div>
+                    <div class="flex flex-col md:flex-row gap-10 items-start pt-6">
+                        <div class="md:w-1/2">
+                            <h3 class="text-3xl font-black mb-6 text-blue-900">即効！課題アプリ化</h3>
+                            <ul class="space-y-4 text-lg">
+                                <li class="flex items-start gap-2">✅ <span class="font-bold">内容:</span> Google AI Studioと専用Gemで対話し、その場で解決ツールを構築</li>
+                                <li class="flex items-start gap-2">✅ <span class="font-bold">体験:</span> 「悩みを話すだけでツールができる」魔法のような成功体験</li>
+                                <li class="flex items-start gap-2">✅ <span class="font-bold">実益:</span> 属人化していた面倒な作業を、5分でAIツールに置き換え</li>
+                            </ul>
+                        </div>
+                        <div class="md:w-1/2 bg-blue-50 p-6 rounded-2xl border border-blue-100">
+                            <p class="text-sm font-bold text-blue-600 mb-2">得られる成果の例</p>
+                            <p class="font-bold italic text-slate-700">「毎日1時間かかっていた報告書の整理が、AIとの対話だけで5分に短縮されました。」</p>
+                        </div>
                     </div>
                 </div>
-                <div class="w-full md:w-1/2 flex justify-center scroll-reveal">
-                    <div class="relative">
-                        <div class="absolute -inset-4 border-2 border-blue-500 rounded-3xl animate-pulse"></div>
-                        <div class="w-64 h-80 bg-slate-700 rounded-2xl overflow-hidden shadow-2xl">
-                            <img src="profile.jpg" class="w-full h-full object-cover" alt="今中 樹一">
+
+                <div class="scroll-reveal bg-white border-2 border-slate-100 p-8 md:p-12 rounded-[3rem] shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 left-0 bg-indigo-600 text-white px-8 py-2 font-black">Level 02</div>
+                    <div class="flex flex-col md:flex-row gap-10 items-start pt-6">
+                        <div class="md:w-1/2">
+                            <h3 class="text-3xl font-black mb-6 text-indigo-900">共有！フロントアプリ</h3>
+                            <ul class="space-y-4 text-lg">
+                                <li class="flex items-start gap-2">✅ <span class="font-bold">内容:</span> AIが書いたコードをWebページとして公開・共有</li>
+                                <li class="flex items-start gap-2">✅ <span class="font-bold">体験:</span> 便利なツールをURL一つで同僚にシェア。スマホからもアクセス可能</li>
+                                <li class="flex items-start gap-2">✅ <span class="font-bold">実益:</span> チームのナレッジを仕組み化し、「あのExcelどこ？」を一掃</li>
+                            </ul>
+                        </div>
+                        <div class="md:w-1/2 bg-indigo-50 p-6 rounded-2xl border border-indigo-100">
+                            <p class="text-sm font-bold text-indigo-600 mb-2">得られる成果の例</p>
+                            <p class="font-bold italic text-slate-700">「現場で全員がスマホから同じ計算ツールを使えるようになり、計算ミスがゼロになりました。」</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="scroll-reveal bg-white border-2 border-slate-100 p-8 md:p-12 rounded-[3rem] shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 left-0 bg-purple-600 text-white px-8 py-2 font-black">Level 03</div>
+                    <div class="flex flex-col md:flex-row gap-10 items-start pt-6">
+                        <div class="md:w-1/2">
+                            <h3 class="text-3xl font-black mb-6 text-purple-900">完結！フルスタック</h3>
+                            <ul class="space-y-4 text-lg">
+                                <li class="flex items-start gap-2">✅ <span class="font-bold">内容:</span> 認証・DB完備。データが蓄積され続ける本格システムを構築</li>
+                                <li class="flex items-start gap-2">✅ <span class="font-bold">体験:</span> ログイン機能でセキュリティを確保。使うほど便利になる「資産」作り</li>
+                                <li class="flex items-start gap-2">✅ <span class="font-bold">実益:</span> 在庫・顧客管理など、自社専用システムを月額費用なしで自律運用</li>
+                            </ul>
+                        </div>
+                        <div class="md:w-1/2 bg-purple-50 p-6 rounded-2xl border border-purple-100">
+                            <p class="text-sm font-bold text-purple-600 mb-2">得られる成果の例</p>
+                            <p class="font-bold italic text-slate-700">「数千点の在庫管理をスマホで完結。自社に最適なシステムを、自分たちで保守・改良できるようになりました。」</p>
                         </div>
                     </div>
                 </div>
@@ -113,23 +151,44 @@
         </div>
     </section>
 
-    <section id="contact" class="py-24 bg-white text-center">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto bg-blue-600 rounded-[3rem] p-12 md:p-20 text-white shadow-2xl shadow-blue-200">
-                <h2 class="text-3xl md:text-5xl font-black mb-8">まずは、御社の「課題」を<br class="hidden md:block">教えてください。</h2>
-                <p class="text-xl text-blue-100 mb-12">その場でAIを使った解決策をデモでお見せします。</p>
-                <form class="grid md:grid-cols-2 gap-4 text-left">
-                    <input type="text" placeholder="貴社名" class="bg-white/10 border border-white/20 p-4 rounded-xl placeholder:text-blue-200 outline-none focus:bg-white/20">
-                    <input type="email" placeholder="メールアドレス" class="bg-white/10 border border-white/20 p-4 rounded-xl placeholder:text-blue-200 outline-none focus:bg-white/20">
-                    <button type="button" class="md:col-span-2 bg-orange-500 py-5 rounded-xl text-xl font-black hover:bg-orange-600 transition shadow-xl mt-4">
-                        無料相談・デモ体験を申し込む
-                    </button>
-                </form>
+    <section id="instructor" class="py-24 bg-slate-900 text-white">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="text-center text-3xl font-black mb-16 underline decoration-blue-500 underline-offset-8">講師プロフィール</h2>
+            <div class="flex flex-col md:flex-row gap-16 items-center">
+                <div class="w-64 h-80 shrink-0 relative">
+                    <div class="absolute inset-0 border-2 border-blue-500 translate-x-4 translate-y-4 rounded-2xl"></div>
+                    <img src="profile.jpg" class="w-full h-full object-cover rounded-2xl relative z-10" alt="今中 樹一">
+                </div>
+                <div>
+                    <h3 class="text-4xl font-black mb-2">今中 樹一 <span class="text-xl text-slate-400">Kiichi Imanaka</span></h3>
+                    <p class="text-blue-400 font-bold mb-6">合同会社KK CONNECT 代表 / 元アサヒビールPM</p>
+                    <div class="space-y-4 text-slate-300 text-lg">
+                        <p>アサヒビールグループで29年勤務。最後の16年間は本社にてプロジェクトマネージャーとして、4つの大規模基幹システム構築を指揮。</p>
+                        <p>大規模開発の「堅牢性」とAIの「スピード」を融合させた独自のメソッドを確立。理論だけでなく「明日から現場で動くものを作る」ことにこだわります。</p>
+                    </div>
+                    <blockquote class="mt-8 border-l-4 border-blue-500 pl-6 text-2xl font-bold italic text-white">
+                        「16年の大規模開発で辿り着いた答えは、『小さく始めて、現場で育てる』こと。DXの内製化こそが、日本の中小企業を強くする鍵です。」
+                    </blockquote>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-12 border-t border-slate-200 text-center text-slate-400 font-bold">
+    <section id="contact" class="py-24 bg-white text-center">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <h2 class="text-4xl font-black mb-8">まずは御社の課題をお聞かせください。</h2>
+            <p class="text-xl mb-12 text-slate-600">どのような業務課題があり、どのレベルのアプリが必要か。<br>無料相談にて、その場でAIによる解決策をデモでお見せします。</p>
+            <div class="bg-blue-600 p-10 md:p-16 rounded-[4rem] text-white shadow-3xl">
+                <h3 class="text-2xl font-bold mb-8">無料オンライン相談・デモ体験</h3>
+                <a href="mailto:info@kk-connect.jp" class="inline-block bg-orange-500 text-white text-2xl px-16 py-6 rounded-2xl font-black hover:bg-orange-600 shadow-xl transition-all">
+                    今すぐ相談を予約する
+                </a>
+                <p class="mt-8 text-blue-200">（まずはデモアプリを見てみるだけでも大歓迎です）</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 bg-slate-100 text-center text-slate-500 font-bold">
         <p>© 2026 KK CONNECT G.K. All rights reserved.</p>
     </footer>
 
