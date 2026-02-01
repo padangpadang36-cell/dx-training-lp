@@ -1,0 +1,12 @@
+/* スムーズスクロールを有効化 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* カスタムアニメーションなどのための場所 */
+.hover-scale {
+    transition: transform 0.3s ease;
+}
+.hover-scale:hover {
+    transform: scale(1.02);
+}
