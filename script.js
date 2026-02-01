@@ -40,3 +40,48 @@ document.addEventListener('DOMContentLoaded', () => {
     reveals.forEach(el => el.classList.add('reveal')); // CSSクラスを追加
     scrollReveal();
 });
+
+// =========================================
+// DXコスト削減シミュレーターのロジック
+// =========================================
+document.addEventListener('DOMContentLoaded', () => {
+    // 要素の取得
+    const inputEmployees = document.getElementById('input-employees');
+    const inputMinutes = document.getElementById('input-minutes');
+    const inputWage = document.getElementById('input-wage');
+
+    const valEmployees = document.getElementById('val-employees');
+    const valMinutes = document.getElementById('val-minutes');
+
+    const resultMonthly = document.getElementById('result-monthly');
+    const resultYearly = document.getElementById('result-yearly');
+
+    // 計算関数
+    function calculateSavings() {
+        // 入力値の取得（数値に変換）
+        const employees = parseInt(inputEmployees.value) || 0;
+        const minutes = parseInt(inputMinutes.value) || 0;
+        const wage = parseInt(inputWage.value) || 0;
+
+        // スライダー横の数値を更新
+        valEmployees.textContent = employees;
+        valMinutes.textContent = minutes;
+
+        // 計算ロジック（月20営業日と仮定）
+        // (人数 * 1日の無駄時間(時間換算) * 時給) * 20日
+        const monthlySaving = Math.round((employees * (minutes / 60) * wage) * 20);
+        const yearlySaving = monthlySaving * 12;
+
+        // 結果の表示（カンマ区切りで見やすく整形）
+        resultMonthly.textContent = monthlySaving.toLocaleString();
+        resultYearly.textContent = yearlySaving.toLocaleString();
+    }
+
+    // イベントリスナーの設定（入力が変化したら即座に再計算）
+    inputEmployees.addEventListener('input', calculateSavings);
+    inputMinutes.addEventListener('input', calculateSavings);
+    inputWage.addEventListener('input', calculateSavings);
+
+    // 初回計算実行
+    calculateSavings();
+});
