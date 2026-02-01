@@ -1,12 +1,40 @@
-/* スムーズスクロールを有効化 */
 html {
     scroll-behavior: smooth;
 }
 
-/* カスタムアニメーションなどのための場所 */
-.hover-scale {
-    transition: transform 0.3s ease;
+/* ヒーローのアニメーション */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s forwards;
 }
-.hover-scale:hover {
-    transform: scale(1.02);
+.delay-1 { animation-delay: 0.3s; }
+.delay-2 { animation-delay: 0.6s; }
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* スクロールで現れるアニメーション用クラス */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* モバイルメニュー用のリンク装飾 */
+.menu-link {
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    transition: color 0.3s;
+}
+.menu-link:hover {
+    color: #f97316; /* orange-500 */
 }
